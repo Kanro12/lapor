@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Laporan Kekerasan</title>
+    <link rel="stylesheet" href="/css/history.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="index.html">Lapor-yo!</a>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="kantor_polisi.html">Kantor Polisi</a></li>
+                <li><a href="/user/tambah-laporan.html">Laporan</a></li>
+                <li><a href="/user/laporan.html">History</a></li>
+            </ul>
+            <div class="navbar-user">
+                <a href="/login&register/login.html">Login</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <section class="data-section">
+            <h1>Data Laporan Kekerasan</h1>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Lokasi</th>
+                        <th>Jenis Kekerasan</th>
+                        <th>Deskripsi</th>
+                        <th>Gambar</th>
+                        <th>Video</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan ditambahkan di sini oleh JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section class="add-report-section">
+            <a href="/user/tambah-laporan.html">Tambahkan Laporan Baru</a>
+        </section>
+    </main>
+
+    <script type="module" src="/database/history.js"></script>
+</body>
+</html>

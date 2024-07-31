@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Kekerasan</title>
+    <link rel="stylesheet" href="/css/laporan.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html">Lapor-yo!</a>
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="kantor_polisi.html">Kantor Polisi</a></li>
+            <li><a href="/user/tambah-laporan.html">Laporan</a></li>
+            <li><a href="/user/laporan.html">History</a></li>
+        </ul>
+        <div class="navbar-user">
+            <a href="/login&register/login.html">Login</a>
+        </div>
+    </nav>
+    <header>
+    </header>
+    <main>
+        <section>
+            <h2>Tambahkan Laporan Baru</h2>
+            <form id="report-form" enctype="multipart/form-data">
+                <label for="date">Tanggal:</label>
+                <input type="date" id="date" required>
+                
+                <label for="location">Lokasi:</label>
+                <input type="text" id="location" required>
+                
+                <label for="type">Jenis Kekerasan:</label>
+                <input type="text" id="type" required>
+                
+                <label for="description">Deskripsi:</label>
+                <textarea id="description" required></textarea>
+                
+                <label for="image">Gambar:</label>
+                <input type="file" id="image" accept="image/*">
+                
+                <label for="video">Video:</label>
+                <input type="file" id="video" accept="video/*">
+                
+                <button type="submit">Kirim Laporan</button>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="/database/laporan.js"></script>
+</body>
+</html>
