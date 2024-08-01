@@ -1,3 +1,4 @@
+/* Reset dan dasar styling */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +7,11 @@
 
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
+/* Styling navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -43,6 +47,7 @@ body {
     background-color: #575757;
 }
 
+/* Styling user section */
 .navbar-user a {
     color: #fff;
     text-decoration: none;
@@ -53,4 +58,74 @@ body {
 
 .navbar-user a:hover {
     background-color: #0056b3;
+}
+
+/* Styling main content */
+.main-content {
+    padding: 2rem;
+}
+
+/* Styling app-info section */
+.app-info {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-info h1, .app-info h2 {
+    color: #333;
+}
+
+.app-info ul {
+    margin-top: 1rem;
+}
+
+.app-info ul li {
+    margin-bottom: 0.5rem;
+}
+
+.app-info p {
+    margin-bottom: 1rem;
+}
+
+/* Styling table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+    }
+
+    .navbar-menu li {
+        margin: 0.5rem 0;
+    }
 }

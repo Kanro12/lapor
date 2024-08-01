@@ -55,36 +55,50 @@ function populateTable(data) {
     const tableBody = document.querySelector('#data-table tbody');
     tableBody.innerHTML = ''; // Clear existing table data
 
+    // Set to keep track of displayed video URLs
+    const displayedVideos = new Set();
+
     if (data) {
         Object.keys(data).forEach(key => {
             const report = data[key];
+            console.log('Report Data:', report); // Debugging: check report data structure
+            
             const row = document.createElement('tr');
             
             // Create table cells
-            const dateCell = `<td>${report.date}</td>`;
-            const locationCell = `<td>${report.location}</td>`;
-            const typeCell = `<td>${report.type}</td>`;
-            const descriptionCell = `<td>${report.description}</td>`;
+            const usernameCell = `<td>${report.username || 'N/A'}</td>`;
+            const nikCell = `<td>${report.nik || 'N/A'}</td>`;
+            const teleponCell = `<td>${report.telepon || 'N/A'}</td>`;
+            const ageCell = `<td>${report.age || 'N/A'}</td>`; // Updated cell for Age
+            const dateCell = `<td>${report.date || 'N/A'}</td>`;
+            const locationCell = `<td>${report.location || 'N/A'}</td>`;
+            const typeCell = `<td>${report.type || 'N/A'}</td>`;
+            const descriptionCell = `<td>${report.description || 'N/A'}</td>`;
 
             // Create image cell
             const imageCell = report.imageUrl 
-                ? `<td><img src="${report.imageUrl}" alt="Report Image"></td>` 
+                ? `<td><img src="${report.imageUrl}" alt="Report Image" style="max-width: 100px; max-height: 100px;"></td>` 
                 : '<td>No Image</td>';
             
             // Create video cell
             const videoCell = report.videoUrl 
-                ? `<td><video src="${report.videoUrl}" controls></video></td>` 
+                ? (displayedVideos.has(report.videoUrl)
+                    ? '<td>Video Already Displayed</td>'
+                    : (() => {
+                        displayedVideos.add(report.videoUrl);
+                        return `<td><video src="${report.videoUrl}" controls style="max-width: 200px;"></video></td>`;
+                    })())
                 : '<td>No Video</td>';
             
             // Combine cells into a row
-            row.innerHTML = `${dateCell}${locationCell}${typeCell}${descriptionCell}${imageCell}${videoCell}`;
+            row.innerHTML = `${usernameCell}${nikCell}${teleponCell}${ageCell}${dateCell}${locationCell}${typeCell}${descriptionCell}${imageCell}${videoCell}`;
             
             // Append the row to the table body
             tableBody.appendChild(row);
         });
     } else {
         const row = document.createElement('tr');
-        row.innerHTML = '<td colspan="6">No reports available</td>';
+        row.innerHTML = '<td colspan="10">No reports available</td>'; // Adjust colspan to include the new column
         tableBody.appendChild(row);
     }
 }

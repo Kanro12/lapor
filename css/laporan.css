@@ -5,8 +5,6 @@ body {
     background-color: #f4f4f4;
 }
 
-
-
 main {
     padding: 2rem;
 }
@@ -66,4 +64,11 @@ button {
 
 button:hover {
     background-color: #555;
+}
+
+/* Additional styling for the age category text */
+#age-category {
+    margin-bottom: 1rem; /* Adjust this value to control spacing between age category and the next element */
+    font-size: 0.9rem;    /* Optional: Adjust font size if needed */
+    color: #666;          /* Optional: Adjust text color if needed */
 }

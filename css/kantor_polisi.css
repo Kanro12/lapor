@@ -1,54 +1,78 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+/* Gaya umum untuk halaman */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Gaya untuk elemen daftar kantor polisi */
+#police-stations {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.station-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.station-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk gambar kantor polisi */
+.station-image {
+    width: 100%;
+    height: auto;
+}
+
+.station-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Gaya untuk informasi kantor polisi */
+.station-info {
+    padding: 15px;
+}
+
+.station-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.station-info p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.station-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.station-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .station-info {
+        padding: 10px;
     }
 
-    body {
-        font-family: Arial, sans-serif;
+    .station-info h2 {
+        font-size: 1.2em;
     }
-
-    .police-station {
-        display: flex;
-        flex-direction: column; /* Mengatur tata letak vertikal */
-        border: 2px solid #333;
-        border-radius: 5px;
-        padding: 1rem;
-        margin: 1rem;
-        max-width: 100%;
-        background-color: #f9f9f9;
-    }
-
-    .police-title {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .police-title h2 {
-        margin-bottom: 0.5rem;
-    }
-
-    .police-image {
-        margin-bottom: 1rem;
-    }
-
-    .police-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
-
-    .police-details {
-        border-top: 2px solid #333;
-        padding-top: 1rem;
-    }
-
-    .police-details h2 {
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-    }
-
-    .police-details p {
-        margin-bottom: 1rem;
-        font-size: 1rem;
-    }
+}

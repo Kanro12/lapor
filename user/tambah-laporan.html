@@ -10,14 +10,13 @@
 <body>
     <nav class="navbar">
         <div class="navbar-brand">
-            <a href="index.html">Lapor-yo!</a>
+            <a href="/user/index.html">Lapor-yo!</a>
         </div>
         <ul class="navbar-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="kantor_polisi.html">Kantor Polisi</a></li>
+            <li><a href="/user/index.html">Home</a></li>
+            <li><a href="/user/kantor_polisi.html">Kantor Polisi</a></li>
             <li><a href="/user/tambah-laporan.html">Laporan</a></li>
-            <li><a href="/user/laporan.html">History</a></li>
+            <li><a href="/user/history.html">History</a></li>
         </ul>
         <div class="navbar-user">
             <a href="/login&register/login.html">Login</a>
@@ -29,6 +28,19 @@
         <section>
             <h2>Tambahkan Laporan Baru</h2>
             <form id="report-form" enctype="multipart/form-data">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+
+                <label for="nik">NIK:</label>
+                <input type="number" id="nik" required>
+
+                <label for="Telepon">Nomor HP:</label>
+                <input type="number" id="Telepon" required>
+
+                <label for="age">Usia:</label>
+                <input type="number" id="age" required>
+                <p id="age-category"></p> <!-- Placeholder for displaying age category -->
+
                 <label for="date">Tanggal:</label>
                 <input type="date" id="date" required>
                 
@@ -46,6 +58,12 @@
                 
                 <label for="video">Video:</label>
                 <input type="file" id="video" accept="video/*">
+                
+                <label for="police-station">Nama Kantor Polisi:</label>
+                <select id="police-station" required>
+                    <option value="">Pilih Kantor Polisi</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
                 
                 <button type="submit">Kirim Laporan</button>
             </form>
